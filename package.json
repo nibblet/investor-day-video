@@ -7,7 +7,9 @@
   "private": true,
   "dependencies": {
     "@remotion/cli": "4.0.534",
+    "@remotion/effects": "4.0.534",
     "@remotion/fonts": "4.0.534",
+    "@remotion/media": "4.0.534",
     "@remotion/transitions": "4.0.534",
     "lucide-react": "^0.453.0",
     "react": "19.2.3",

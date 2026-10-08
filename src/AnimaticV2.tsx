@@ -18,7 +18,7 @@ import { EndOfDay } from "./scenes/v2/EndOfDay";
 
 export const ANIMATIC_V2_DURATION = 2640;
 
-const CAPTIONS_V2: CaptionLine[] = [
+export const CAPTIONS_V2: CaptionLine[] = [
   [0.3, 3.2, "Six-forty. My agents worked while I slept."],
   [3.2, 6.6, "Newsletter's scheduled, the electrician's booked, and three deals got flagged."],
   [6.6, 9, "Nothing went out without me."],

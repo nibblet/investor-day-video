@@ -39,6 +39,18 @@ Fonts (Geist, OFL) are bundled in `public/fonts`, so renders need no network.
 | `O5-Offer` / `O5-Offer-NoDollars` | 1080×1920 α | 5A, 0:40–0:52 | The offer over the kitchen-table shot, with or without the number |
 | `O7-CTA` | 1080×1920 α | 7A, 1:04–1:15 | "What would you hand off first?" |
 
+### Produced cut (`ProducedV2`, 88 s)
+
+Same timeline and VO as `AnimaticV2`, finished for Reels/TikTok: the truck's
+light bar opens and closes the film, phones float in 3D, agent cards and stat
+chips fly out of the screens, captions pop 2–3 words at a time, light leaks
+mark the cuts. `npx remotion render ProducedV2 out/ProducedV2.mp4`.
+
+Sound: SFX in `public/sfx/` (from remotion.media). The music bed
+`public/music/temp-bed.mp3` is **temporary**, synthesized by
+`scripts/make-temp-music.py`. Swap in a licensed track before publishing and
+duck it under Paul's VO.
+
 ### Script v2 (`script/v2.md`): agent layer, 88 s
 
 | Composition | Size | Script beat | Use in the edit |

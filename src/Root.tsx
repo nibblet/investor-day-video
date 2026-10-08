@@ -9,6 +9,7 @@ import { S6ADealBoard, S6A_DURATION } from "./scenes/S6DealBoard";
 import { S6BFollowUp, S6B_DURATION } from "./scenes/S6FollowUp";
 import { ClosingCTA, OfferOverlay, TimeStamp } from "./scenes/Overlays";
 import { AnimaticV2, ANIMATIC_V2_DURATION } from "./AnimaticV2";
+import { ProducedV2, PRODUCED_V2_DURATION } from "./ProducedV2";
 import { MorningBrief, MORNING_DURATION } from "./scenes/v2/MorningBrief";
 import { BackgroundTray, TRAY_DURATION } from "./scenes/v2/BackgroundTray";
 import { OneMessage, ONE_MESSAGE_DURATION } from "./scenes/v2/OneMessage";
@@ -19,6 +20,7 @@ import { PropertyBrief, BRIEF_DURATION } from "./scenes/v2/PropertyBrief";
 
 export const RemotionRoot: React.FC = () => (
   <>
+    <Composition id="ProducedV2" component={ProducedV2} durationInFrames={PRODUCED_V2_DURATION} fps={FPS} {...VERTICAL} />
     <Composition id="AnimaticV2" component={AnimaticV2} durationInFrames={ANIMATIC_V2_DURATION} fps={FPS} {...VERTICAL} />
     <Folder name="V2-agent-plates">
       <Composition id="V2-0-MorningBrief" component={MorningBrief} durationInFrames={MORNING_DURATION} fps={FPS} {...PHONE} />
