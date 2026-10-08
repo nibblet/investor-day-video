@@ -51,11 +51,13 @@ const CAPTIONS: [number, number, string][] = [
   [69.4, 72, "I just don't do the busywork anymore."],
 ];
 
-const Captions: React.FC = () => {
+export type CaptionLine = [number, number, string];
+
+export const Captions: React.FC<{ lines?: CaptionLine[] }> = ({ lines = CAPTIONS }) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
   const t = frame / fps;
-  const cur = CAPTIONS.find(([a, b]) => t >= a && t < b);
+  const cur = lines.find(([a, b]) => t >= a && t < b);
   if (!cur) return null;
   return (
     <AbsoluteFill style={{ justifyContent: "flex-end", alignItems: "center", paddingBottom: 420, pointerEvents: "none" }}>
@@ -79,7 +81,7 @@ const Captions: React.FC = () => {
   );
 };
 
-const Photo: React.FC<{ src: string; focus?: string; zoom?: [number, number]; dim?: number }> = ({
+export const Photo: React.FC<{ src: string; focus?: string; zoom?: [number, number]; dim?: number }> = ({
   src,
   focus = "50% 50%",
   zoom = [1.04, 1.16],
@@ -105,7 +107,7 @@ const Photo: React.FC<{ src: string; focus?: string; zoom?: [number, number]; di
 };
 
 // Stand-in for an AI shot that hasn't been generated yet.
-const ShotPanel: React.FC<{ id: string; desc: string }> = ({ id, desc }) => (
+export const ShotPanel: React.FC<{ id: string; desc: string }> = ({ id, desc }) => (
   <AbsoluteFill
     style={{
       background: `radial-gradient(120% 80% at 50% 30%, #2A2C31 0%, ${C.bg} 70%)`,
@@ -122,7 +124,7 @@ const ShotPanel: React.FC<{ id: string; desc: string }> = ({ id, desc }) => (
   </AbsoluteFill>
 );
 
-const ShotTag: React.FC<{ text: string }> = ({ text }) => (
+export const ShotTag: React.FC<{ text: string }> = ({ text }) => (
   <div
     style={{
       position: "absolute",
@@ -143,10 +145,11 @@ const ShotTag: React.FC<{ text: string }> = ({ text }) => (
 );
 
 // A phone-shaped frame that shows a 1080×2340 plate at reduced size.
-const Phone: React.FC<{ children: React.ReactNode; width?: number; top?: number }> = ({
+export const Phone: React.FC<{ children: React.ReactNode; width?: number; top?: number; left?: number }> = ({
   children,
   width = 540,
   top = 120,
+  left,
 }) => {
   const frame = useCurrentFrame();
   const s = width / PHONE.width;
@@ -155,7 +158,7 @@ const Phone: React.FC<{ children: React.ReactNode; width?: number; top?: number 
     <div
       style={{
         position: "absolute",
-        left: (1080 - width) / 2 - 16,
+        left: left ?? (1080 - width) / 2 - 16,
         top: top + enter,
         opacity: interpolate(frame, [0, 10], [0, 1], clamp),
         padding: 16,
@@ -173,7 +176,7 @@ const Phone: React.FC<{ children: React.ReactNode; width?: number; top?: number 
   );
 };
 
-const Monitor: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+export const Monitor: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const frame = useCurrentFrame();
   const width = 1000;
   const s = width / MONITOR.width;

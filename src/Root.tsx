@@ -8,9 +8,28 @@ import { S4Rehab, S4_DURATION } from "./scenes/S4Rehab";
 import { S6ADealBoard, S6A_DURATION } from "./scenes/S6DealBoard";
 import { S6BFollowUp, S6B_DURATION } from "./scenes/S6FollowUp";
 import { ClosingCTA, OfferOverlay, TimeStamp } from "./scenes/Overlays";
+import { AnimaticV2, ANIMATIC_V2_DURATION } from "./AnimaticV2";
+import { MorningBrief, MORNING_DURATION } from "./scenes/v2/MorningBrief";
+import { BackgroundTray, TRAY_DURATION } from "./scenes/v2/BackgroundTray";
+import { OneMessage, ONE_MESSAGE_DURATION } from "./scenes/v2/OneMessage";
+import { SuggestedLane, SUGGESTED_DURATION } from "./scenes/v2/SuggestedLane";
+import { EndOfDay, END_DURATION } from "./scenes/v2/EndOfDay";
+import { DealScreen, DEAL_DURATION } from "./scenes/v2/DealScreen";
+import { PropertyBrief, BRIEF_DURATION } from "./scenes/v2/PropertyBrief";
 
 export const RemotionRoot: React.FC = () => (
   <>
+    <Composition id="AnimaticV2" component={AnimaticV2} durationInFrames={ANIMATIC_V2_DURATION} fps={FPS} {...VERTICAL} />
+    <Folder name="V2-agent-plates">
+      <Composition id="V2-0-MorningBrief" component={MorningBrief} durationInFrames={MORNING_DURATION} fps={FPS} {...PHONE} />
+      <Composition id="V2-2-Deal" component={DealScreen} durationInFrames={DEAL_DURATION} fps={FPS} {...PHONE} />
+      <Composition id="V2-3-PropertyBrief" component={PropertyBrief} durationInFrames={BRIEF_DURATION} fps={FPS} {...PHONE} />
+      <Composition id="V2-4-AgentTray" component={BackgroundTray} durationInFrames={TRAY_DURATION} fps={FPS} {...VERTICAL} />
+      <Composition id="V2-6-OneMessage" component={OneMessage} durationInFrames={ONE_MESSAGE_DURATION} fps={FPS} {...PHONE} />
+      <Composition id="V2-7-SuggestedLane" component={SuggestedLane} durationInFrames={SUGGESTED_DURATION} fps={FPS} {...MONITOR} />
+      <Composition id="V2-8-EndOfDay" component={EndOfDay} durationInFrames={END_DURATION} fps={FPS} {...PHONE} />
+    </Folder>
+
     <Composition id="Animatic" component={Animatic} durationInFrames={ANIMATIC_DURATION} fps={FPS} {...VERTICAL} />
 
     {/* Screen plates: composite onto the green phone / monitor screens. */}

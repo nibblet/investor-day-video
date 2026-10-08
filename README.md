@@ -39,6 +39,26 @@ Fonts (Geist, OFL) are bundled in `public/fonts`, so renders need no network.
 | `O5-Offer` / `O5-Offer-NoDollars` | 1080×1920 α | 5A, 0:40–0:52 | The offer over the kitchen-table shot, with or without the number |
 | `O7-CTA` | 1080×1920 α | 7A, 1:04–1:15 | "What would you hand off first?" |
 
+### Script v2 (`script/v2.md`): agent layer, 88 s
+
+| Composition | Size | Script beat | Use in the edit |
+| --- | --- | --- | --- |
+| `AnimaticV2` | 1080×1920 | whole piece, 0:00–1:28 | v2 rough cut with burned-in VO captions |
+| `V2-0-MorningBrief` | 1080×2340 | 0, 0:00–0:09 | Operate › Tasks at 6:40 AM: done overnight + suggested |
+| `V2-2-Deal` | 1080×2340 | 2, 0:14–0:22 | Edge Deal screen: BUY, max offer, evidence, key inputs |
+| `V2-3-PropertyBrief` | 1080×2340 | 3, 0:22–0:29 | Edge Property brief + seller read (never the owner's name) |
+| `V2-4-AgentTray` | 1080×1920 α | 4, 0:29–0:45 | "Working in the background" tray over the walkthrough |
+| `V2-6-OneMessage` | 1080×2340 | 6, 0:54–1:06 | One sentence closes 2 tasks, updates 3 |
+| `V2-7-SuggestedLane` | 1920×1080 | 7, 1:06–1:15 | Office monitor: promote 2 suggestions, dismiss 1 |
+| `V2-8-EndOfDay` | 1080×2340 | 8, 1:15–1:28 | Reflect: 9 handled, 1 needed you, approve the post |
+
+The v2 phone screens copy the forVEX Edge iPhone app from Paul's 10/8 screen
+recording (`src/components/readvise.tsx`: colours sampled from the recording,
+Operate · Sense · Track · Reflect tab bar). Agent card copy lives in
+`src/data/agents.ts` and comes from the real agent ledger with names stripped.
+The raw recording is **not** in the repo: it shows a live deal's address and an
+owner's name.
+
 Phone plates are 19.5:9 (iPhone screen ratio) so they corner-pin straight onto
 the flat-green phone screens in the generated shots.
 
