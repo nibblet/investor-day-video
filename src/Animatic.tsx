@@ -111,7 +111,8 @@ const ShotPanel: React.FC<{ id: string; desc: string }> = ({ id, desc }) => (
       background: `radial-gradient(120% 80% at 50% 30%, #2A2C31 0%, ${C.bg} 70%)`,
       fontFamily: SANS,
       alignItems: "center",
-      paddingTop: 200,
+      justifyContent: "flex-end",
+      paddingBottom: 200,
     }}
   >
     <div style={{ textAlign: "center", color: C.muted }}>
@@ -144,8 +145,8 @@ const ShotTag: React.FC<{ text: string }> = ({ text }) => (
 // A phone-shaped frame that shows a 1080×2340 plate at reduced size.
 const Phone: React.FC<{ children: React.ReactNode; width?: number; top?: number }> = ({
   children,
-  width = 640,
-  top = 200,
+  width = 540,
+  top = 120,
 }) => {
   const frame = useCurrentFrame();
   const s = width / PHONE.width;
